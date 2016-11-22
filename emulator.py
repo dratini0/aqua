@@ -154,6 +154,9 @@ class CPU():
            self.registers[dst] = src_val
 
 if __name__ == "__main__":
+    if len(sys.argv) < 3:
+        print("Usage: emulator.py alu.rom <binary>")
+        sys.exit(1)
     alu_rom = open(sys.argv[1], "rb")
     rom = open(sys.argv[2], "rb")
     instance = CPU(alu_rom, rom)
